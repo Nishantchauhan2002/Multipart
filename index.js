@@ -1,3 +1,4 @@
+const { error } = require("console");
 const express = require("express");
 const multer = require("multer");
 // const upload = multer({ dest: "uploads/" });
@@ -32,6 +33,8 @@ app.get("/uploaded", (req, res) => {
   res.render("successPage");
 });
 app.post("/upload", upload.single("profileImage"), (req, res) => {
+  if (!req.file) return res.json({ msg: "Please upload a file" });
+
   console.log(req.body);
   console.log(req.file);
 
