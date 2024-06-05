@@ -3,6 +3,10 @@ const express = require("express");
 const multer = require("multer");
 // const upload = multer({ dest: "uploads/" });
 
+//Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files.
+//enctype="multipart/form-data" is used to encrypt the data that we have passed in the forms 
+
+
 const app = express();
 
 const path = require("path");
